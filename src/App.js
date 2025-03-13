@@ -1,24 +1,20 @@
-import './App.css';
+ import Weather from "./Weather";
+
+ function Header() {
+   return (
+     <header>
+       <h1>Weather App</h1>
+     </header>
+   );
+ }
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <header>
+      <Header />
+      <Weather />
+    </header>
+  )
 }
 
 export default App;
