@@ -69,14 +69,11 @@ const App = () => {
                   <span>H: {Math.round(weatherData.main.temp_min)}° </span>
                   <span>L: {Math.round(weatherData.main.temp_max)}° </span>
                   </div>
-                  <span>{weatherData.weather[0].main}</span>
+                  <span>{(weatherData.weather[0].main)}</span>
                   </div>
                 </div>
                 <div className='lower-data'>
-                
                 <p>Humidity: {weatherData.main.humidity}%</p>
-
-                {/* wind not correct */}
                 <p>Wind: {Math.round(weatherData.wind.speed * 3.6)} km/h</p>
                 
                 {/* sun time * 1000 to miliseconds */}
