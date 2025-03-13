@@ -40,12 +40,21 @@ const Weather = () => {
         {error && <p>{error}</p>}
         {weatherData && (
             <div>
+                {/* day date ? */}
                 <h2>{weatherData.name}</h2>
                 <p>Temperature: {weatherData.main.temp} °C</p>
                 <p>Weather: {weatherData.weather[0].main}</p>
                 <p>Humidity: {weatherData.main.humidity}%</p>
-                <p>Wind: {weatherData.wind.speed}</p>
-                {/* sunrise sunset */}
+                {/* wind not correct */}
+                <p>Wind: {(weatherData.wind.speed * 3.6).toFixed(2)} km/h</p>
+                <p>Min: {weatherData.main.temp_min} °C</p>
+                <p>Max: {weatherData.main.temp_max} °C</p>
+                {/* sun time * 1000 to miliseconds */}
+                <p>Sunrise: {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>
+                <p>Sunset: {new Date(weatherData.sys.sunset * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>
+                {/* hourly forecast */}
+                {/* 5 days forecast */}
+                {/* moon ? */}
             </div>
         )}
     </div>
