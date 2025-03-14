@@ -62,23 +62,29 @@ const App = () => {
         {weatherData && (
           <div className='container'>
                 <div className='upper-data'>
+
                   <div className='weather-data'>
                   <h3 className='location'>{weatherData.name + ", " + getCountryName(weatherData.sys.country)}</h3>
                   <span className='temperature'>Temperature: {Math.round(weatherData.main.temp)}°C</span>
                   <div className='maxmin'>
-                  <span>H: {Math.round(weatherData.main.temp_min)}° </span>
-                  <span>L: {Math.round(weatherData.main.temp_max)}° </span>
+                  <span>H: {Math.round(weatherData.main.temp_max)}° </span>
+                  <span>L: {Math.round(weatherData.main.temp_min)}° </span>
                   </div>
                   <span>{(weatherData.weather[0].main)}</span>
                   </div>
+
                 </div>
                 <div className='lower-data'>
-                <p>Humidity: {weatherData.main.humidity}%</p>
-                <p>Wind: {Math.round(weatherData.wind.speed * 3.6)} km/h</p>
+                  <div className='upper-block'>
+                    <p>Humidity: {weatherData.main.humidity}%</p>
+                    <p>Wind: {Math.round(weatherData.wind.speed * 3.6)} km/h</p>
+                  </div>
+                  <div className='lower-block'>
+                    {/* sun time * 1000 to miliseconds */}
+                    <p>Sunrise: {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>
+                    <p>Sunset: {new Date(weatherData.sys.sunset * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>
+                  </div>
                 
-                {/* sun time * 1000 to miliseconds */}
-                <p>Sunrise: {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>
-                <p>Sunset: {new Date(weatherData.sys.sunset * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>
                 {/* hourly forecast */}
                 {/* 5 days forecast */}
                 {/* moon ? */}
