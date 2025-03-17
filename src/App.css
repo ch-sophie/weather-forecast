@@ -68,6 +68,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
 .weather-data{
   position: relative;
@@ -79,4 +80,10 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.humidity, .sunrise{
+  margin-right: 2px;
+}
+img{
+  margin: 5px;
 }

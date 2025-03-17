@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
+import humidity from './assets/humidity.png';
+import wind from './assets/wind.png';
+import sunrise from './assets/sunrise.png';
+import sunset from './assets/sunset.png';
 
 const App = () => {
     const [city, setCity] = useState('');
@@ -76,13 +80,17 @@ const App = () => {
                 </div>
                 <div className='lower-data'>
                   <div className='upper-block'>
-                    <p>Humidity: {weatherData.main.humidity}%</p>
-                    <p>Wind: {Math.round(weatherData.wind.speed * 3.6)} km/h</p>
+                    <img title='humidity-logo' alt='humidity-logo' width="9%" src={humidity} />
+                    <p className='humidity'>Humidity: {weatherData.main.humidity}%</p>
+                    <img title='wind-logo' alt='wind-logo' width="9%" src={wind} />
+                    <p className='wind'>Wind: {Math.round(weatherData.wind.speed * 3.6)} km/h</p>
                   </div>
                   <div className='lower-block'>
                     {/* sun time * 1000 to miliseconds */}
-                    <p>Sunrise: {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>
-                    <p>Sunset: {new Date(weatherData.sys.sunset * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>
+                    <img title='sunrise-logo' alt='sunrise-logo' width="10%" src={sunrise} />
+                    <p className='sunrise'>Sunrise: {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>
+                    <img title='sunset-logo' alt='sunset-logo' width="10%" src={sunset} />
+                    <p className='sunset'>Sunset: {new Date(weatherData.sys.sunset * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>
                   </div>
                 
                 {/* hourly forecast */}
