@@ -59,7 +59,7 @@ const App = () => {
                   <h3 className='location'>{weatherData.name + ", " + getCountryName(weatherData.sys.country)}</h3>
                   <span className='temperature'>{Math.round(weatherData.main.temp)}°C</span>
                   <span className='description'>{(weatherData.weather[0].main)}</span>
-                </div>
+                </div>             
               </div>
               <div className='lower-data'>
                   <div className='upper-block'>
@@ -69,20 +69,22 @@ const App = () => {
                     <p className='wind'>Wind: {Math.round(weatherData.wind.speed * 3.6)} km/h</p>
                   </div>
                   <div className='middle-block'>
+                    {/* current high and low and not for the day - need another API */}
                     <img title='warmth-logo' alt='warmth-logo' width="9%" src={warmth} />
-                    <span className='high'>Max: {Math.round(weatherData.main.temp_max)}°C </span>
+                    <span className='high'>High: {Math.round(weatherData.main.temp_max)}°C </span>
                     <img title='cold-logo' alt='cold-logo' width="9%" src={cold} />
-                    <span className='low'>Min: {Math.round(weatherData.main.temp_min)}°C </span>
+                    <span className='low'>Low: {Math.round(weatherData.main.temp_min)}°C </span>
                   </div>
-                  <div className='lower-block'>                
+                   <div className='lower-block'>    
                     {/* sun time * 1000 to miliseconds */}
+                    {/* current time based on current time zone */}
                     <img title='sunrise-logo' alt='sunrise-logo' width="10%" src={sunrise} />
                     <p className='sunrise'>Sunrise: {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>
                     <img title='sunset-logo' alt='sunset-logo' width="10%" src={sunset} />
                     <p className='sunset'>Sunset: {new Date(weatherData.sys.sunset * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>
-                  </div>                
-                </div>
-            </div>          
+                  </div>
+              </div>
+          </div>
         )}
     </div>
     );
