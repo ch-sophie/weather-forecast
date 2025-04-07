@@ -5,6 +5,7 @@
 }
 body{
   font-family: 'Cabin', sans-serif;
+  overflow: hidden;
   width: 100%;
   height: 100vh;
   background-color: #254fa8;
