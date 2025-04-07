@@ -8,8 +8,9 @@ There is also a search input to search for the weather of other locations.
 
 **Weather API from [Open Weather Map](https://openweathermap.org/api)**
 
-### Project deplyed via Netlify:
+#### Project deployed via Netlify:
 **https://good-weather-forecast.netlify.app/**
 
-#### Fix:
+##### Fix:
     - Sunrise and sunset time based on local time (of system)
+    - Zoom bug with search

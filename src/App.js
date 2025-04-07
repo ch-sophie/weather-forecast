@@ -77,7 +77,6 @@ const App = () => {
                   </div>
                    <div className='lower-block'>    
                     {/* sun time * 1000 to miliseconds */}
-                    {/* current time based on current time zone */}
                     <img title='sunrise-logo' alt='sunrise-logo' width="10%" src={sunrise} />
                     <p className='sunrise'>Sunrise: {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>
                     <img title='sunset-logo' alt='sunset-logo' width="10%" src={sunset} />
