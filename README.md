@@ -10,3 +10,6 @@ There is also a search input to search for the weather of other locations.
 
 ### Project deplyed via Netlify:
 **https://good-weather-forecast.netlify.app/**
+
+#### Fix:
+    - Sunrise and sunset time based on local time (of system)
